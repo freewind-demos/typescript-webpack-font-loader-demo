@@ -1,4 +1,2 @@
-import $ from 'jquery'
+import '@openfonts/bitter_latin';
 import './index.css';
-
-$('#main').text('Hello, webpack!');

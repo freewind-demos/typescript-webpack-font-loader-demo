@@ -23,12 +23,24 @@ const config: Configuration = {
       test: /\.ts$/,
       loader: 'ts-loader',
       exclude: /node_modules/
+    }, {
+      test: /\.woff(2)?$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: './font/[hash].[ext]',
+            mimetype: 'application/font-woff'
+          }
+        }
+      ]
     }]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    }) as any
+    })
   ]
 }
 
